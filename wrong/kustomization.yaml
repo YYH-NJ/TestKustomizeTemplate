@@ -12,5 +12,5 @@ configMapGenerator:
   - name: pg-config
     literals:
       - defaultPassword=admin
-      - pgDefaultUsername={{ $var1.username }}
+      - pgDefaultUsername={{ $var.usernamenotexists }}
       - pgDefaultPassword={{ $var.password }}
