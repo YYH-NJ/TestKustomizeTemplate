@@ -6,7 +6,7 @@ resources:
 commonLabels:
   environment: dev
 
-namespace: kustomize-poc
+namespace: { {  $sys.id } }
 
 configMapGenerator:
   - name: pg-config
