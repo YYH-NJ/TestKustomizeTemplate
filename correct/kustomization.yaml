@@ -6,7 +6,7 @@ resources:
 commonLabels:
   environment: dev
 
-namespace: { {  $sys.id } }
+namespace: {{  $sys.id }}
 
 configMapGenerator:
   - name: pg-config
