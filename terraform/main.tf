@@ -19,11 +19,6 @@ locals {
     "${local.region}d"
   ]
   vpc_id = "{{ $sys.deploymentCell.cloudProviderNetworkID }}"
-  availability_zones = [
-    "${local.region}a",
-    "${local.region}b",
-    "${local.region}d"
-  ]
   subnet_ids = [
     "{{ $sys.deploymentCell.publicSubnetIDs[0].id }}",
     "{{ $sys.deploymentCell.publicSubnetIDs[1].id }}",
