@@ -25,7 +25,7 @@ locals {
     "{{ $sys.deploymentCell.publicSubnetIDs[2].id }}"
   ]
 
-  s3_bucket_name = "some-bucket-name-${random_string.suffix.result}"
+  s3_bucket_name = "some-bucket-name-new-${random_string.suffix.result}"
 }
 
 # S3 Bucket
