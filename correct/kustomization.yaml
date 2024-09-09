@@ -14,3 +14,4 @@ configMapGenerator:
       - defaultPassword=admin
       - pgDefaultUsername={{ $var.username }}
       - pgDefaultPassword={{ $var.password }}
+      - s3Bucket={{ $terraformChild.out.bucket_url }}
