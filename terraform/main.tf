@@ -29,10 +29,6 @@ locals {
 }
 
 # S3 Bucket
-data "aws_kms_alias" "s3" {
-  name = "alias/aws/s3"
-}
-
 module "db_bucket" {
   source  = "terraform-aws-modules/s3-bucket/aws"
   version = "~> 4.1.1"
@@ -44,31 +40,6 @@ module "db_bucket" {
   block_public_policy     = true
   ignore_public_acls      = true
   restrict_public_buckets = true
-
-  server_side_encryption_configuration = {
-    rule = {
-      apply_server_side_encryption_by_default = {
-        kms_master_key_id = data.aws_kms_alias.s3.id
-        sse_algorithm     = "aws:kms"
-      }
-      bucket_key_enabled = true
-    }
-  }
-
-  lifecycle_rule = [
-    {
-      id      = "expire-cache-objs"
-      enabled = true
-
-      filter = {
-        prefix = "_cache/"
-      }
-
-      expiration = {
-        days = 60
-      }
-    }
-  ]
 }
 
 
