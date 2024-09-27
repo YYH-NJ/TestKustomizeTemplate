@@ -73,5 +73,8 @@ module "db_bucket" {
 
 
 output "bucket_url" {
-  value = module.db_bucket.s3_bucket_arn
+  value = {
+    arn: module.db_bucket.s3_bucket_arn
+  }
+  sensitive = true
 }
