@@ -43,7 +43,7 @@ module "db_bucket" {
 }
 
 
-output "bucket_url" {
+output "bucket_url_update" {
   value = {
     arn: module.db_bucket.s3_bucket_arn
   }
