@@ -21,7 +21,7 @@ locals {
 
 # S3 Bucket
 module "db_bucket" {
-  source  = "terraform-aws-modules/s3-bucket/aws"
+  source  = "terraform-aws-modules/s3-buckett/aws"
   version = "~> 4.1.1"
 
   bucket = local.s3_bucket_name
