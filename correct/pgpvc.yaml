@@ -5,7 +5,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
-  storageClassName: omnistrate-platform-default
+  storageClassName: oci
   resources:
     requests:
       storage: 5Gi
